@@ -43,6 +43,19 @@ print x3
 end process p2
 ```
 
+```
+NAME    OPR         MSG     TO/FROM     TIME
+p1      SEND        m1      P2          1
+p2      PRINT       x1                  1
+p1      PRINT       abc                 2
+p2      RECEIVE     m1      P1          2
+p1      PRINT       def                 3
+p2      PRINT       x2                  3
+p2      SEND        m2      P1          4
+p2      PRINT       x3                  5
+```
+
+
 ### Sample Input (Deadlocked)
 
 ```
@@ -61,4 +74,21 @@ sENd p1 m2
 recv p4 mm
 print x3
 end process p2
+```
+
+```
+NAME    OPR         MSG     TO/FROM     TIME
+p1      SEND        m1      P2          1
+p2      PRINT       x1                  1
+p1      PRINT       abc                 2
+p2      RECEIVE     m1      P1          2
+p1      PRINT       def                 3
+p2      PRINT       x2                  3
+p2      SEND        m2      P1          4
+
+            System Deadlocked.
+            
+            PROCESS     TIME
+            p2          4
+
 ```
