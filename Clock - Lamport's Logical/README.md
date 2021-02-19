@@ -18,6 +18,8 @@ where each line contains a basic operation. The possible basic operations are:
 - print msg (that is, print message msg to the terminal)
 where msg is any alphanumeric string.
 
+<hr style="border:2px solid gray"> </hr>
+
 ### Instructions to Run Programs:
 
 Make changes to input.txt for changing input for the program.
@@ -41,6 +43,7 @@ In Windows:
 7. If not all processes are in Deadlock, then also deadlock is reported.
 8. Number of processes cannot exceed 10.
 
+<hr style="border:2px solid gray"> </hr>
 
 ### Sample Input (Normal)
 
