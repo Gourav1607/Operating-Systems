@@ -1,5 +1,23 @@
 # Lamport's Logical Clock
 
+The program takes a description of several process schedules as input (i.e., lists of send, receive or print operations). The output of your program will be a linearization of these events in the order actually performed, annotated with Lamport clock values.
+
+The input of the program will be a collection of processes, each with a list of operations to perform.
+The processes are named p1...pn for some n (you may assume that n is at most 9) The format of
+a process is:
+```
+begin process p1
+operation
+...
+operation
+end process 
+```
+where each line contains a basic operation. The possible basic operations are:
+- send pN msg (that is, send message msg to process pN)
+- recv pN msg (that is, receive message msg from process pN)
+- print msg (that is, print message msg to the terminal)
+where msg is any alphanumeric string.
+
 ### Instructions to Run Programs:
 
 Make changes to input.txt for changing input for the program.
