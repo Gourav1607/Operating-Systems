@@ -1,8 +1,9 @@
 /* To print kernel version, CPU type and model, information on configured memory ,amount of free and used memory*/
 
-#include<stdio.h>
-#include<stdlib.h>
-main() {
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
 	system("clear");
 
 	printf("kernel version \n");
@@ -12,8 +13,8 @@ main() {
 	system("cat /proc/cpuinfo |awk 'NR==5{print}' ");
 
 	printf("third version \n the amount of memory configured in system\n");
-//print the 4th row of the meminfo file from the proc directory
-//awk= filter nth row
+	//print the 4th row of the meminfo file from the proc directory
+	//awk= filter nth row
 	system("cat /proc/meminfo|awk 'NR==4{print} ' ");
 
 	printf(" \n amt of mem currently available \n");

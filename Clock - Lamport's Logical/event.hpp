@@ -5,13 +5,14 @@
  */
 
 #ifndef EVENT_HPP
-#define	EVENT_HPP
+#define EVENT_HPP
 
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
-class Event{
+class Event
+{
 public:
     string name;
     string type;
@@ -19,7 +20,8 @@ public:
     string tf_proc;
     int time;
 
-    Event() {
+    Event()
+    {
         name = "";
         type = "";
         msg = "";
@@ -34,39 +36,50 @@ public:
     //     time = 0;
     // }
 
-    string get_name() {
+    string get_name()
+    {
         return name;
     }
-    string get_type() {
+    string get_type()
+    {
         return type;
     }
-    string get_msg() {
+    string get_msg()
+    {
         return msg;
     }
-    string get_tf() {
+    string get_tf()
+    {
         return tf_proc;
     }
-    int get_time() {
+    int get_time()
+    {
         return time;
     }
 
-    void set_name(string name) {
+    void set_name(string name)
+    {
         this->name = name;
     }
-    void set_type(string type) {
+    void set_type(string type)
+    {
         this->type = type;
     }
-    void set_msg(string msg) {
+    void set_msg(string msg)
+    {
         this->msg = msg;
     }
-    void set_tf(string tf_proc) {
+    void set_tf(string tf_proc)
+    {
         this->tf_proc = tf_proc;
     }
-    void set_time(int time) {
+    void set_time(int time)
+    {
         this->time = time;
     }
-    void print() {
-        cout << setfill (' ');
+    void print()
+    {
+        cout << setfill(' ');
         cout << setw(5) << name;
         cout << setw(10) << type;
         cout << setw(8) << msg;
@@ -75,31 +88,39 @@ public:
     }
 };
 
-void removeSpaces(string &str) { 
-    int n = str.length(); 
-    int i = 0, j = -1; 
-    bool spaceFound = false; 
-  
-    while (++j < n && str[j] == ' '); 
+void removeSpaces(string &str)
+{
+    int n = str.length();
+    int i = 0, j = -1;
+    bool spaceFound = false;
 
-    while (j < n) {
-        if (str[j] != ' ') {
-            if ((str[j] == '.' || str[j] == ',' || 
-                 str[j] == '?') && i - 1 >= 0 && 
-                 str[i - 1] == ' ') 
+    while (++j < n && str[j] == ' ')
+        ;
+
+    while (j < n)
+    {
+        if (str[j] != ' ')
+        {
+            if ((str[j] == '.' || str[j] == ',' ||
+                 str[j] == '?') &&
+                i - 1 >= 0 &&
+                str[i - 1] == ' ')
                 str[i - 1] = str[j++];
             else
                 str[i++] = str[j++];
-            spaceFound = false; 
-        } else if (str[j++] == ' ') { 
-            if (!spaceFound) { 
-                str[i++] = ' '; 
-                spaceFound = true; 
-            } 
-        } 
-    } 
+            spaceFound = false;
+        }
+        else if (str[j++] == ' ')
+        {
+            if (!spaceFound)
+            {
+                str[i++] = ' ';
+                spaceFound = true;
+            }
+        }
+    }
 
-    str.erase(str.begin() + i, str.end()); 
-} 
+    str.erase(str.begin() + i, str.end());
+}
 
-#endif	/* EVENT_HPP */
+#endif /* EVENT_HPP */
